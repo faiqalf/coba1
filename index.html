@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>Ucapan Selamat Teman-teman</title>
 <style>
   :root {
@@ -10,12 +10,19 @@
     --text: #ffffff;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     font-family: "Poppins", sans-serif;
     color: var(--text);
     background: #111;
-    overflow-x: hidden;
     scroll-behavior: smooth;
   }
 
@@ -28,6 +35,7 @@
     align-items: center;
     text-align: center;
     padding: 60px 20px;
+    overflow: hidden;
   }
 
   section::before {
@@ -44,6 +52,8 @@
     position: relative;
     z-index: 1;
     max-width: 900px;
+    width: 100%;
+    text-align: center;
   }
 
   h1 {
@@ -57,6 +67,7 @@
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.6;
     padding-top: 10px;
+    word-wrap: break-word;
   }
 
   footer {
@@ -67,11 +78,11 @@
   }
 
   #hero .content {
-  background: rgba(0, 0, 0, 0.582); /* hitam transparan */
-  padding: 30px;
-  border-radius: 30px;
-  display: inline-block;
-  color: rgb(248, 248, 248);
+    background: rgba(0, 0, 0, 0.582);
+    padding: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    color: rgb(248, 248, 248);
   }
 
   /* Splash Screen */
@@ -132,14 +143,15 @@
     transform: translateX(-50%) scale(1.1);
   }
 
-  /* Cards Umum (page 2 & 3) */
-  .team-cards, .apresiasi-cards {
+  /* Cards Umum */
+  .team-cards, .apresiasi-layout {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
     margin-top: 40px;
     z-index: 1;
+    width: 100%;
   }
 
   .card {
@@ -158,6 +170,7 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
+    display: block;
   }
 
   .card h3 {
@@ -168,20 +181,12 @@
 
   .card p { padding: 0 15px 15px; color: #eee; font-size: 0.9rem; }
 
-  @media (max-width: 900px) {
-    .apresiasi-cards { flex-direction: column; align-items: center; }
+  @media (max-width: 600px) {
+    .card { width: 80%; }
+    .card img { height: auto; }
   }
 
-  /* Layout untuk page 3 */
-  .apresiasi-layout {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    gap: 20px;
-  }
-
+  /* Pesan */
   .pesan {
     max-width: 300px;
     font-size: 1.1rem;
@@ -262,17 +267,6 @@
 </div>
 
 <!-- Halaman 1 -->
-<section id="hero">
-  <div class="content">
-    <h1>UNTUK KELUARGAKU</h1>
-    <p class="lead">Di balik gemerlapnya sebuah acara yang berjalan dengan indah,ada dua nahkoda bijak, Jodhi dan Hamid, yang dengan ketenangan dan arah yang pasti, menuntun bahtera divisi acara menuju dermaga kesuksesan.</p>
-    <p class="lead">Tak lupa, untuk sang koordinator acara Kimi, yang menenun setiap detail dengan ketulusan dan ketegasan, serta Adhim, sang wakil yang menjadi tangan kanan penuh sigap, menjaga ritme, harmoni, dan keseimbangan di setiap langkah.</p>
-    <p class="lead"> Dan untuk para pilar yang membuat panggung ini berdiri tegak Faiq, Tasya, Agoy, dan Eva terima kasih atas dedikasi, kerja keras, dan senyum di balik layar. Kalian bukan hanya menjalankan acara, tetapi menyalakan cahaya kebersamaan yang tak akan padam.</p>
-    <p class="lead">Sukses ini bukan akhir, melainkan tanda bahwa setiap detik perjuangan telah berubah menjadi kisah yang akan dikenang dengan bangga.</p>
-  </div>
-</section>
-
-<!-- Halaman 2 -->
 <section id="team">
   <div class="content">
     <h1>Para Pilar Hebat Dibalik Divisi Acara</h1>
@@ -288,13 +282,29 @@
   </div>
 </section>
 
-<!-- Halaman 3 (Apresiasi Koordinator Umum) -->
+<!-- Halaman 2 -->
+<section id="team">
+  <div class="content">
+    <h1>Para Pilar Hebat Dibalik Divisi Acara</h1>
+    <p class="lead">Terima kasih untuk semua yang telah berjuang tanpa kenal lelah</p>
+    <div class="team-cards">
+      <div class="card"><img src="kimi.jpg"><h3>Kimi</h3><p>Terima kasih atas dedikasi.</p></div>
+      <div class="card"><img src="adhim.jpg"><h3>Adhim</h3><p>Kerja keras luar biasa!</p></div>
+      <div class="card"><img src="agoy.jpg"><h3>Agoy</h3><p>Membawa warna tersendiri.</p></div>
+      <div class="card"><img src="faiq.jpg"><h3>Faiq</h3><p>Semua berjalan lancar.</p></div>
+      <div class="card"><img src="tasya.jpg"><h3>Tasya</h3><p>Bagian penting acara ini 💫</p></div>
+      <div class="card"><img src="eva.jpg"><h3>Eva</h3><p>Kehangatanmu membuat hidup!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Halaman 3 -->
 <section id="apresiasi">
   <div class="content">
     <h1>Apresiasi untuk Koordinator Umum</h1>
     <div class="apresiasi-layout">
       <div class="card"><img src="jodhi.jpg"><h3>Jodhi</h3><p>Koordinator Umum</p></div>
-      <p class="pesan">Terima kasih atas arahan, semangat, dan koordinasinya yang membuat acara berjalan lancar dan penuh makna 💛</p>
+      <p class="pesan">Terima kasih atas arahan, semangat, dan koordinasinya 💛</p>
       <div class="card"><img src="hamid.jpg"><h3>Hamid</h3><p>Koordinator Umum</p></div>
     </div>
   </div>
@@ -304,20 +314,16 @@
 <section id="carousel">
   <div class="content">
     <h1>Momen Tak Terlupakan</h1>
-    <p class="lead">Perasaan Baru Sebulan yang Lalu wkwkwkw</p>
     <div class="carousel-container">
       <div class="carousel-track">
         <div class="carousel-group">
           <img src="foto1.jpg"><img src="foto2.jpg"><img src="foto3.jpg"><img src="foto4.jpg"><img src="foto5.jpg">
-          <img src="foto6.jpg"><img src="foto7.jpg"><img src="foto8.jpg"><img src="foto9.jpg"><img src="foto10.jpg">
         </div>
         <div class="carousel-group">
           <img src="foto1.jpg"><img src="foto2.jpg"><img src="foto3.jpg"><img src="foto4.jpg"><img src="foto5.jpg">
-          <img src="foto6.jpg"><img src="foto7.jpg"><img src="foto8.jpg"><img src="foto9.jpg"><img src="foto10.jpg">
         </div>
       </div>
     </div>
-    <p class="lead">Ayo Kita Rapat Lagiiii😄😄😄</p>
   </div>
 </section>
 
@@ -325,13 +331,12 @@
 <section id="memories">
   <div class="content">
     <h1>Apresiasi Kepada Seluruh Panitia</h1>
-    <div class="memory-photo"><img src="foto-bersama.jpg" alt="Foto Bersama"></div>
-    <p class="lead">Terima kasih atas kerja keras, kebersamaan, dan dedikasi kalian semua yang telah membuat acara ini sukses dan berkesan</p>
+    <div class="memory-photo"><img src="foto-bersama.jpg"></div>
+    <p class="lead">Terima kasih atas kerja keras dan kebersamaan kalian semua 💛</p>
   </div>
 </section>
 
 <footer>©2025 | from Adhim & Faiq</footer>
-
 
 <!-- Tombol Musik -->
 <button id="musicBtn">⏸️</button>
@@ -363,5 +368,3 @@ musicBtn.addEventListener("click", () => {
 </script>
 </body>
 </html>
-
-
